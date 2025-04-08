@@ -1,30 +1,23 @@
-public class Cliente {
+public class Cliente implements Cloneable {
+    private int id;
     private String nome;
-    private String cpf;
+    private String email;
 
-    public Cliente(String nome, String cpf) {
+    public Cliente(int id, String nome, String email) {
+        this.id = id;
         this.nome = nome;
-        this.cpf = cpf;
+        this.email = email;
     }
 
-    public String getNome() {
-        return nome;
-    }
+    public int getId() { return id; }
+    public String getNome() { return nome; }
+    public String getEmail() { return email; }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+    public void setNome(String nome) { this.nome = nome; }
+    public void setEmail(String email) { this.email = email; }
 
     @Override
     public String toString() {
-        return "Nome: " + nome + ", CPF: " + cpf;
+        return "Cliente [id=" + id + ", nome=" + nome + ", email=" + email + "]";
     }
 }
